@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[RESTful API设计总结]]></title>
+    <url>%2F2017%2F09%2F29%2FA%2BNote%2Bof%2BRESTful%2BAPI%2BDesign%2F</url>
+    <content type="text"><![CDATA[近期，组内的前后端分离项目中用到了RESTful进行后台API的设计，经过一段时间的学习和实践，我对RESTful API设计有了进一步的认识。该项目中后台部分采用的框架是ThinkPHP5，前端部分用的是vue2+vue-router+vuex的全家桶，用axios进行数据交互。这里总结一下对RESTful API的学习和设计心得。 RESTful简介RESTful（Representational State Transfer，表现层状态转移）是一种软件架构风格，主要用于客户端（包括浏览器）与服务器端进行数据交互的场景。一个好的RESTful API设计，可以让服务器端只实现一套API接口，就能同时为Web应用、移动端、电脑端同时提供更简洁，更有层次，更易于实现缓存的服务。 RESTful设计举例知乎上对RESTful API有一条言简意赅的解释： 看url就知道要什么，看http method就知道干什么，看http status code就知道结果如何。 举个例子：如果拿课程(course)作为一个资源，对其进行符合RESTful的API接口设计，其url一般可以设计成如下格式： 获取课程资源列表[GET] http://api.hostname.com/v1/courses 获取指定id的课程资源[GET] http://api.hostname.com/v1/courses/id 新建课程资源[POST] http://api.hostname.com/v1/courses 更新课程资源（全部）[PUT] http://api.hostname.com/v1/courses 更新课程资源（部分）[PATCH] http://api.hostname.com/v1/courses 删除课程资源[DELETE] http://api.hostname.com/v1/courses 获取指定id的课程下的实验资源列表[GET] http://api.hostname.com/v1/courses/id/experiments 获取课程资源列表（分页查询）[GET] http://api.hostname.com/v1/courses?query=&amp;page=2&amp;per_page=100 由上述例子可以看出，RESTful用url来表示一个资源（列表），用HTTP method来表示对资源的增删改查，用http请求参数来对访问的资源作进一步限定。一些实际应用中公认的设计优良的的RESTful API可以参考github和leancloud。 RESTful设计准则按上述几个方面划分，RESTful设计需要符合如下准则： 一、urlRESTful架构中的url代表的是一个资源。url一般需要符合如下要求： url中最好加入API的版本号信息； url中尽量用名词表示资源； url中尽量用名词的复数； url中一般会加入可选的参数（如id），表示对资源限制条件； url中可按需加入过滤信息（如?q=&amp;page=2&amp;per_page=100、?sortby=name&amp;order=asc、?type=1等）； 二、http methodRESTful中用到的http method如下： // 常用 GET (SELECT) ：获出资源（一项或多项）。 POST (CREATE) ：新建一个资源。 PUT (UPDATE) ：更新资源（客户端提供改变后的完整资源）。 PATCH (UPDATE) ：更新资源（客户端只提供待改变部分的属性）。 DELETE (DELETE) ：删除资源。 // 不常用 HEAD：获取资源的元数据。 OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。 三、http status codeRESTful API返回的响应结果中，其http状态码应该按照http规范对响应结果的状态进行表示。常见的状态码与提示信息如下： 200 OK – [GET] 操作成功 201 CREATED – [POST/PUT/PATCH] 新建/修改数据成功 204 NO CONTENT – [DELETE] 删除数据成功 400 INVALID REQUEST – [POST/PUT/PATCH] 请求的数据有误 404 NOT FOUND – [*] 资源不存在 500 INTERNAL SERVER ERROR – [*] 服务器发生错误 四、other 对于4xx的错误情况，需要将错误的信息返回，比如{&quot;error&quot;:&quot;没有权限！&quot;}； 返回的结果尽量使用json格式； 最好添加身份验证，如OAuth 2.0，或api_key; 最好做到Hypermedia，即在返回结果中提供指向该API的说明文档链接或其他相关API的链接。]]></content>
+      <categories>
+        <category>RESTful</category>
+      </categories>
+      <tags>
+        <tag>RESTful</tag>
+        <tag>API</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跨域资源共享技术总结]]></title>
+    <url>%2F2017%2F09%2F28%2FA%2BNote%2Bof%2BCORS%2F</url>
+    <content type="text"><![CDATA[跨域资源共享，即Cross-origin Resource Sharing（下称CORS），又叫跨源资源共享。CORS产生的原因，主要是受浏览器自身的同源策略（Same-origin Policy）限制。 浏览器的同源策略浏览器的同源策略 源的定义An origin is defined by the scheme, host, and port of a URL. ### ##]]></content>
+      <categories>
+        <category>HTTP</category>
+      </categories>
+      <tags>
+        <tag>Browser</tag>
+        <tag>HTTP</tag>
+        <tag>ThinkPHP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js小技巧之----获取窗口resize完成之后的事件]]></title>
+    <url>%2F2016%2F07%2F31%2FSimulate%2B%22onresized%22%2BEvent%2Bby%2BUsing%2B%22settimeout%22%2F</url>
+    <content type="text"><![CDATA[用js可以方便地获取浏览器窗口onResize事件，当窗口在被resize的时候，该事件会不断被触发。然而，想要获取窗口resize完成之后的事件(onResizeCompleted)却比较麻烦。 获取onResize事件js原生代码如下：123window.addEventListener('resize', function() &#123; console.log(window.innerWidth + ' ' + window.innerHeight);&#125;); JQuery代码如下：123$(window).on('resize', function() &#123; console.log($(window).width() + ' ' + $(window).height());&#125;); 上面的代码，可以使浏览器在resize的时候在控制台console实时输出当前页面的长、宽像素。这里就不贴图了，可以看到随着鼠标对浏览器窗口的拖动(onResize)时，console里有很多的数据在实时输出。也就是说，上面的函数在resize的时候执行了很多次！ 那么问题来了：如果我想只想监听浏览器窗口resize结束的事件该怎么做呢？也就是说，如果我只想让一个函数在浏览器窗口resize结束之后只执行一次，而不是一直执行，该怎么做呢？ 获取onResizeCompleted事件js原生代码12345678var resizeTimer;window.addEventListener('resize', function() &#123; clearTimeout(resizeTimer); resizeTimer = setTimeout(function() &#123; // 此函数会在resize结束的时候执行 console.log('onResizeCompleted'); &#125;, 250);&#125;); JQuery代码12345678var resizeTimer;$(window).on('resize', function(e) &#123; clearTimeout(resizeTimer); resizeTimer = setTimeout(function() &#123; // 此函数在resize结束的时候执行 console.log('onResizeCompleted'); &#125;, 250);&#125;); 这里利用setTimeout()函数配合对应的clearTimeout()函数不断被执行，实现了简单的计时器Timer，当resize事件触发后停下来的250ms时间后，执行内部的匿名函数，模拟实现对onResizeCompleted事件的监听。当然，这里的250ms可以根据实际的需求进行自己的设定，不过已经符合大部分的情况了，我在noVNC里也见到过同样的设定。 总结这种小技巧，可能会在处理别的类似的事件的时候会有用，有待验证。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Event</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用js弹出浏览器自定义精简窗口]]></title>
+    <url>%2F2016%2F07%2F30%2FOpen%2Band%2BControl%2Ba%2Bcustomized%2BWindow%2Bin%2BBrowser%2F</url>
+    <content type="text"><![CDATA[有时候，由于某些需求，一些网页需要更大块儿的像素区域来展示更多更丰富的信息，这时可通过JavaScript对浏览器边框进行自定义“精简”，来达到这样的目的。 代码实现我们可以调用如下的函数控制浏览器弹出自定义精简窗口。12345678910111213141516// 定义新窗口相关的变量var newWindow = null;var newWindowName = "new_window";var newWindowFeature = "resizable=yes, scrollbars=yes, left=200, top=100, width=600, height=400";function popUpSimpleWindow()&#123; // 判断该窗口是否已经打开 if(newWindow == null || newWindow.closed) &#123; // 打开上述自定义特性的窗口 newWindow = window.open("http://nucNaOH.github.io", newWindowName, newWindowFeature); &#125;else&#123; newWindow.focus(); &#125;&#125;popUpSimpleWindow(); 效果如下图： 原理详解关键的代码如下：1newWindow = window.open(url, newWindowName, newWindowFeature); 该函数的有三个参数，分别为新窗口的url、新窗口的标识name(String)、新窗口的特性值feature(String，逗号分隔)，还返回该窗口对象的引用nenWindow，我们可以借此加一层判断，实现同时只可以有一个新窗口存在，如最上面的代码。 其中第三个参数可以自行选择设定。这里先普及一下浏览器页面上各元素的名称： 参照上面的图，便可通过window.open()函数对新窗口的页面元素进行自定义。比如上面的resizable=yes, scrollbars=yes,还有menubars,titlebars,location等等。 这里支持4种风格的字符串配置风格： menubar=yes,toolbar=yes,scrollbars=no menubar=on,toolbar=on,scrollbars=off menubar=1,toolbar=1,scrollbars=0 menubar,toolbar,scrollbars(写的有，不写的就没有) 更详细的参数说明请参考JavaScript开发手册 额外说明 某些情况下，用户对浏览器的设置可能导致某些特性按用户的设定来，而非js里的设定； 某些安全软件可能禁止了浏览器弹出新窗口； 调用window.open()方法以后，远程 URL 不会被立即载入，载入过程是异步的。（实际加载这个URL的时间推迟到当前脚本块执行结束之后。窗口的创建和相关资源的加载异步地进行。）]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ajax用JQuery实现的一种个人常用写法]]></title>
+    <url>%2F2016%2F07%2F30%2FAjax%2Bin%2BJQuery%2Band%2BPrimitive%2BJavaScript%2F</url>
+    <content type="text"><![CDATA[Ajax，即Asynchronous JavaScript and XML，翻译过来就是：异步的JavaScript与XML技术。个人的理解是：一种用JS在浏览器上执行的想服务器发送请求以获取相应数据技术，使用它可以很方便地在不更新页面的前提下请求、获取、处理、显示数据。 这种技术在浏览器上应用非常广泛，这里仅记录几种我个人用Ajax时常用的方便调试的写法。 JQuery写法个人自用写法12345678910111213141516171819202122232425$.ajax(&#123; url: "http://nucNaOH.github.io/", type: "POST", timeout: 5000, async: true, // default is true data: &#123; text: text &#125;, dataType: "json", // xml,json,jsonp,script,html,text. // 一般从数据库查找出来的结果，返回都是json格式。页面用html beforeSend: function(jqXHR) &#123; // console.log('beforeSend:'+text); &#125;, success: function(data) &#123; // console.log('success'+data); &#125;, error: function() &#123; // console.log(jqXHR); // 该函数的三个参数： // jqXHR jqXHR, String statusText, String errorThrown &#125;, complete : function(jqXHR, statusText, settings) &#123; // 无论success、error都会执行，且在success、error之后 &#125;&#125;); 连贯写法：1234567891011var jqxhr = $.ajax( "example.php" ) .done(function() &#123; $( this ).addClass( "done" ); // alert( "success" ); &#125;) .fail(function() &#123; alert( "error" ); &#125;) .always(function() &#123; alert( "complete" ); &#125;); 原生js写法原生的JavaScript实现ajax技术的写法： 精简版12345678function reqListener() &#123; console.log(this.responseText);&#125;var oReq = new XMLHttpRequest();oReq.onload = reqListener;oReq.open('get', 'some.php', true);oReq.send(); 多事件监听版123456789101112131415161718var req = new XMLHttpRequest();req.addEventListener("progress", updateProgress, false);req.addEventListener("load", transferComplete, false);req.addEventListener("error", transferFailed, false);req.addEventListener("abort", transferCanceled, false);req.open();// 传输进度监听 (下载)function updateProgress(evt) &#123; if (evt.lengthComputable) &#123; var percentComplete = evt.loaded / evt.total; &#125; else &#123; // 总长度没设置时无法监听进度 &#125;&#125; 相关文章 Using XMLHttpRequest jQuery.ajax() XMLHttpRequest]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+        <tag>JQuery</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用Hexo在GitHub上搭建博客]]></title>
+    <url>%2F2016%2F07%2F14%2FBuild%2BHexo%2BBlog%2Bby%2BUsing%2BGitHub%2BPages%2F</url>
+    <content type="text"><![CDATA[最近学习了使用hexo在GitHub上搭建博客，特此记录。 需要安装的软件 node.js Git Git与GitHub相关注册并创建GitHub仓库仓库名字格式应为：githubname.github.io，类型为Public即可。创建成功后会生成该仓库的git地址，格式如下： https://github.com/your_name/your_name.github.io.git Git本地配置在本地Git Bash中配置个人名字和邮箱，用来记录提交信息。12$ git config --global user.name "your_name"$ git config --global user.email "your_email@your_email.com" SSH key配置SSH key是用来将本地Git与远程的GitHub关联起来的关键配置。在本地Git bash中执行如下命令： 1. 检查SSH key的设置1$ cd ~/.ssh 2. 备份并移除原来的SSH key1234$ ls$ mkdir key_backup$ cp id_rsa* key_backup$ rm id_rsa* 3. 生成新的SSH key1$ ssh-keygen -t rsa -C "your_email@your_email.com" 4. 添加SSH key到远程GitHub生成的id_rsa是私钥，需要保管好，而公钥id_rsa.pub中的内容需要在个人GitHub主页的Settings里的SSH and GPG keys选项中添加上，title项可根据个人习惯随便写。 5. 测试1$ ssh -T git@github.com Hexo的安装与使用安装HexoHexo是一个快速、简洁且高效的博客框架。在安装完node.js之后，就可以在命令行或git bash中使用npm命令进行安装Hexo了。1$ npm install hexo-cli -g 使用Hexo安装完hexo后，在需要的文件夹下（以F:/Hexo为例）右键-&gt;”Git Bash Here”，在git bash中输入如下命令123$ hexo init "your_blog"$ hexo g$ hexo s 在浏览器中打开http://localhost:4000便能在本地预览博客效果 发布博客到GitHub Repo本地仓库跟GitHub建立联系在Hexo生成的.deploy_git文件夹下用git将其与远程仓库建立联系（只需要执行一次）123$ git init$ git remote -v$ git remote add origin git@github.com:your_name/your_name.github.io.git 发布博客12$ hexo g$ hexo d Hexo还有很多好用的模板可供使用，详细的使用方法此处仅贴几个相关链接，供后续学习使用。 相关链接Hexo themeHexo githubHexo 官网]]></content>
+      <categories>
+        <category>个人小研究</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Apache多站点管理]]></title>
+    <url>%2F2016%2F07%2F13%2FMultisites%2BSetting%2Bin%2BApache%2F</url>
+    <content type="text"><![CDATA[修改文件:apache/conftpd.ctf找到这两句取消注释 12#LoadModule vhost_alias_module modules/mod_vhost_alias.so#Include conf/extratpd-vhosts.conf 在DocumentRoot下添加：12345&lt;Directory "F:/php"&gt; Options Indexes FollowSymLinks Includes ExecCGI AllowOverride All Require all granted&lt;/Directory&gt; 修改文件：apache/conf/extratpd-vhosts.conf添加以下内容1234&lt;VirtualHost *:80&gt; DocumentRoot "F:/php" ServerName www.zhangziye.com&lt;/VirtualHost&gt; 修改C:/windows/system32/drivers/detc/hosts添加： 127.0.0.1 www.zhangziye.com##注意前面不要加#号]]></content>
+      <categories>
+        <category>Apache</category>
+      </categories>
+      <tags>
+        <tag>Apache</tag>
+      </tags>
+  </entry>
+</search>
