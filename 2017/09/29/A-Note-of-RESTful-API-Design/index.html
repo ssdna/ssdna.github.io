@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,GitHub," />
+  <meta name="keywords" content="RESTful,API," />
 
 
 
@@ -114,18 +114,18 @@
 
 
 
-<meta name="description" content="最近学习了使用hexo在GitHub上搭建博客，特此记录。 需要安装的软件 node.js Git">
-<meta name="keywords" content="Hexo,GitHub">
+<meta name="description" content="近期，组内的前后端分离项目中用到了RESTful进行后台API的设计，经过一段时间的学习和实践，我对RESTful API设计有了进一步的认识。该项目中后台部分采用的框架是ThinkPHP5，前端部分用的是vue2+vue-router+vuex的全家桶，用axios进行数据交互。这里总结一下对RESTful API的学习和设计心得。">
+<meta name="keywords" content="RESTful,API">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用Hexo在GitHub上搭建博客">
-<meta property="og:url" content="http://ssdna.github.io/2016/07/14/Build+Hexo+Blog+by+Using+GitHub+Pages/index.html">
+<meta property="og:title" content="RESTful API设计总结">
+<meta property="og:url" content="http://ssdna.github.io/2017/09/29/A-Note-of-RESTful-API-Design/index.html">
 <meta property="og:site_name" content="DNA&#39; Blog">
-<meta property="og:description" content="最近学习了使用hexo在GitHub上搭建博客，特此记录。 需要安装的软件 node.js Git">
+<meta property="og:description" content="近期，组内的前后端分离项目中用到了RESTful进行后台API的设计，经过一段时间的学习和实践，我对RESTful API设计有了进一步的认识。该项目中后台部分采用的框架是ThinkPHP5，前端部分用的是vue2+vue-router+vuex的全家桶，用axios进行数据交互。这里总结一下对RESTful API的学习和设计心得。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-09T10:18:49.000Z">
+<meta property="og:updated_time" content="2017-10-09T10:07:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用Hexo在GitHub上搭建博客">
-<meta name="twitter:description" content="最近学习了使用hexo在GitHub上搭建博客，特此记录。 需要安装的软件 node.js Git">
+<meta name="twitter:title" content="RESTful API设计总结">
+<meta name="twitter:description" content="近期，组内的前后端分离项目中用到了RESTful进行后台API的设计，经过一段时间的学习和实践，我对RESTful API设计有了进一步的认识。该项目中后台部分采用的框架是ThinkPHP5，前端部分用的是vue2+vue-router+vuex的全家桶，用axios进行数据交互。这里总结一下对RESTful API的学习和设计心得。">
 
 
 
@@ -155,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="http://ssdna.github.io/2016/07/14/Build+Hexo+Blog+by+Using+GitHub+Pages/"/>
+  <link rel="canonical" href="http://ssdna.github.io/2017/09/29/A-Note-of-RESTful-API-Design/"/>
 
 
 
 
 
-  <title>用Hexo在GitHub上搭建博客 | DNA' Blog</title>
+  <title>RESTful API设计总结 | DNA' Blog</title>
   
 
 
@@ -332,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ssdna.github.io/2016/07/14/Build+Hexo+Blog+by+Using+GitHub+Pages/">
+    <link itemprop="mainEntityOfPage" href="http://ssdna.github.io/2017/09/29/A-Note-of-RESTful-API-Design/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="DNA">
@@ -349,7 +349,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">用Hexo在GitHub上搭建博客</h2>
+          <h2 class="post-title" itemprop="name headline">RESTful API设计总结</h2>
         
 
         <div class="post-meta">
@@ -361,8 +361,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-14T12:08:54+08:00">
-                2016-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T10:37:32+08:00">
+                2017-09-29
               </time>
             
 
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-09T18:18:49+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-09T18:07:14+08:00">
                 2017-10-09
               </time>
             
@@ -396,8 +396,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/个人小研究/" itemprop="url" rel="index">
-                    <span itemprop="name">个人小研究</span>
+                  <a href="/categories/RESTful/" itemprop="url" rel="index">
+                    <span itemprop="name">RESTful</span>
                   </a>
                 </span>
 
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  529
+                  966
                 </span>
               
 
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -469,30 +469,61 @@
       
 
       
-        <p>最近学习了使用hexo在GitHub上搭建博客，特此记录。</p>
-<h2 id="需要安装的软件"><a href="#需要安装的软件" class="headerlink" title="需要安装的软件"></a>需要安装的软件</h2><ol>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a></li>
-<li><a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a><a id="more"></a>
-</li>
-</ol>
-<h2 id="Git与GitHub相关"><a href="#Git与GitHub相关" class="headerlink" title="Git与GitHub相关"></a>Git与GitHub相关</h2><h4 id="注册并创建GitHub仓库"><a href="#注册并创建GitHub仓库" class="headerlink" title="注册并创建GitHub仓库"></a>注册并创建GitHub仓库</h4><p>仓库名字格式应为：<code>githubname.github.io</code>，类型为<code>Public</code>即可。创建成功后会生成该仓库的git地址，格式如下：</p>
+        <p>近期，组内的前后端分离项目中用到了RESTful进行后台API的设计，经过一段时间的学习和实践，我对RESTful API设计有了进一步的认识。该项目中后台部分采用的框架是<code>ThinkPHP5</code>，前端部分用的是<code>vue2+vue-router+vuex</code>的全家桶，用<code>axios</code>进行数据交互。这里总结一下对RESTful API的学习和设计心得。</p>
+<a id="more"></a>
+<h3 id="RESTful简介"><a href="#RESTful简介" class="headerlink" title="RESTful简介"></a>RESTful简介</h3><p>RESTful（Representational State Transfer，表现层状态转移）是一种软件架构风格，主要用于客户端（包括浏览器）与服务器端进行数据交互的场景。一个好的RESTful API设计，可以让服务器端只实现一套API接口，就能同时为Web应用、移动端、电脑端同时提供更简洁，更有层次，更易于实现缓存的服务。</p>
+<h3 id="RESTful设计举例"><a href="#RESTful设计举例" class="headerlink" title="RESTful设计举例"></a>RESTful设计举例</h3><p><a href="">知乎</a>上对RESTful API有一条言简意赅的解释：</p>
 <blockquote>
-<p><a href="https://github.com/your_name/your_name.github.io.git" target="_blank" rel="external">https://github.com/your_name/your_name.github.io.git</a></p>
+<p>看<code>url</code>就知道要什么，看<code>http method</code>就知道干什么，看<code>http status code</code>就知道结果如何。</p>
 </blockquote>
-<h4 id="Git本地配置"><a href="#Git本地配置" class="headerlink" title="Git本地配置"></a>Git本地配置</h4><p>在本地Git Bash中配置个人名字和邮箱，用来记录提交信息。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"your_name"</span></div><div class="line">$ git config --global user.email <span class="string">"your_email@your_email.com"</span></div></pre></td></tr></table></figure></p>
-<h4 id="SSH-key配置"><a href="#SSH-key配置" class="headerlink" title="SSH key配置"></a>SSH key配置</h4><p>SSH key是用来将本地Git与远程的GitHub关联起来的关键配置。在本地Git bash中执行如下命令：</p>
-<h4 id="1-检查SSH-key的设置"><a href="#1-检查SSH-key的设置" class="headerlink" title="1. 检查SSH key的设置"></a>1. 检查SSH key的设置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/.ssh</div></pre></td></tr></table></figure>
-<h4 id="2-备份并移除原来的SSH-key"><a href="#2-备份并移除原来的SSH-key" class="headerlink" title="2. 备份并移除原来的SSH key"></a>2. 备份并移除原来的SSH key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ls</div><div class="line">$ mkdir key_backup</div><div class="line">$ cp id_rsa* key_backup</div><div class="line">$ rm id_rsa*</div></pre></td></tr></table></figure>
-<h4 id="3-生成新的SSH-key"><a href="#3-生成新的SSH-key" class="headerlink" title="3. 生成新的SSH key"></a>3. 生成新的SSH key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@your_email.com"</span></div></pre></td></tr></table></figure>
-<h4 id="4-添加SSH-key到远程GitHub"><a href="#4-添加SSH-key到远程GitHub" class="headerlink" title="4. 添加SSH key到远程GitHub"></a>4. 添加SSH key到远程GitHub</h4><p>生成的<em>id_rsa</em>是私钥，需要保管好，而公钥<em>id_rsa.pub</em>中的内容需要在个人GitHub主页的Settings里的SSH and GPG keys选项中添加上，title项可根据个人习惯随便写。</p>
-<h4 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
-<h2 id="Hexo的安装与使用"><a href="#Hexo的安装与使用" class="headerlink" title="Hexo的安装与使用"></a>Hexo的安装与使用</h2><h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>Hexo是一个快速、简洁且高效的博客框架。在安装完node.js之后，就可以在命令行或git bash中使用npm命令进行安装Hexo了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure></p>
-<h4 id="使用Hexo"><a href="#使用Hexo" class="headerlink" title="使用Hexo"></a>使用Hexo</h4><p>安装完hexo后，在需要的文件夹下（以F:/Hexo为例）右键-&gt;”Git Bash Here”，在git bash中输入如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init <span class="string">"your_blog"</span></div><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure></p>
-<p>在浏览器中打开<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>便能在本地预览博客效果</p>
-<h2 id="发布博客到GitHub-Repo"><a href="#发布博客到GitHub-Repo" class="headerlink" title="发布博客到GitHub Repo"></a>发布博客到GitHub Repo</h2><h4 id="本地仓库跟GitHub建立联系"><a href="#本地仓库跟GitHub建立联系" class="headerlink" title="本地仓库跟GitHub建立联系"></a>本地仓库跟GitHub建立联系</h4><p>在Hexo生成的.deploy_git文件夹下用git将其与远程仓库建立联系（只需要执行一次）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git init</div><div class="line">$ git remote -v</div><div class="line">$ git remote add origin git@github.com:your_name/your_name.github.io.git</div></pre></td></tr></table></figure></p>
-<h4 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<p>Hexo还有很多好用的模板可供使用，详细的使用方法此处仅贴几个相关链接，供后续学习使用。</p>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Hexo theme</a><br><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo github</a><br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo 官网</a></p>
+<p>举个例子：如果拿课程(course)作为一个资源，对其进行符合RESTful的API接口设计，其url一般可以设计成如下格式：</p>
+<ul>
+<li>获取课程资源列表<br>[GET] <code>http://api.hostname.com/v1/courses</code></li>
+<li>获取指定id的课程资源<br>[GET] <code>http://api.hostname.com/v1/courses/id</code></li>
+<li>新建课程资源<br>[POST] <code>http://api.hostname.com/v1/courses</code></li>
+<li>更新课程资源（全部）<br>[PUT] <code>http://api.hostname.com/v1/courses</code></li>
+<li>更新课程资源（部分）<br>[PATCH] <code>http://api.hostname.com/v1/courses</code></li>
+<li>删除课程资源<br>[DELETE] <code>http://api.hostname.com/v1/courses</code></li>
+<li>获取指定id的课程下的实验资源列表<br>[GET] <code>http://api.hostname.com/v1/courses/id/experiments</code></li>
+<li>获取课程资源列表（分页查询）<br>[GET] <code>http://api.hostname.com/v1/courses?query=&amp;page=2&amp;per_page=100</code></li>
+</ul>
+<p>由上述例子可以看出，RESTful用<code>url</code>来表示一个资源（列表），用<code>HTTP method</code>来表示对资源的增删改查，用<code>http请求参数</code>来对访问的资源作进一步限定。一些实际应用中公认的设计优良的的RESTful API可以参考<a href="">github</a>和<a href="">leancloud</a>。</p>
+<h3 id="RESTful设计准则"><a href="#RESTful设计准则" class="headerlink" title="RESTful设计准则"></a>RESTful设计准则</h3><p>按上述几个方面划分，RESTful设计需要符合如下准则：</p>
+<h4 id="一、url"><a href="#一、url" class="headerlink" title="一、url"></a>一、url</h4><p>RESTful架构中的url代表的是一个资源。url一般需要符合如下要求：</p>
+<ol>
+<li>url中最好加入API的<strong>版本号</strong>信息；</li>
+<li>url中尽量用<strong>名词</strong>表示资源；</li>
+<li>url中尽量用名词的<strong>复数</strong>；</li>
+<li>url中一般会加入可选的<strong>参数</strong>（如<code>id</code>），表示对资源限制条件；</li>
+<li>url中可按需加入过滤信息（如<code>?q=&amp;page=2&amp;per_page=100</code>、<code>?sortby=name&amp;order=asc</code>、<code>?type=1</code>等）；</li>
+</ol>
+<h4 id="二、http-method"><a href="#二、http-method" class="headerlink" title="二、http method"></a>二、http method</h4><p>RESTful中用到的http method如下：</p>
+<ul>
+<li>// 常用</li>
+<li>GET     (SELECT)    ：获出资源（一项或多项）。</li>
+<li>POST    (CREATE)    ：新建一个资源。</li>
+<li>PUT     (UPDATE)    ：更新资源（客户端提供改变后的完整资源）。</li>
+<li>PATCH   (UPDATE)    ：更新资源（客户端只提供待改变部分的属性）。</li>
+<li>DELETE  (DELETE)    ：删除资源。</li>
+<li>// 不常用</li>
+<li>HEAD：获取资源的元数据。</li>
+<li>OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。</li>
+</ul>
+<h4 id="三、http-status-code"><a href="#三、http-status-code" class="headerlink" title="三、http status code"></a>三、http status code</h4><p>RESTful API返回的响应结果中，其<strong>http状态码</strong>应该按照http规范对响应结果的状态进行表示。常见的状态码与提示信息如下：</p>
+<ul>
+<li>200 OK                      – [GET] 操作成功</li>
+<li>201 CREATED                 – [POST/PUT/PATCH] 新建/修改数据成功</li>
+<li>204 NO CONTENT              – [DELETE] 删除数据成功</li>
+<li>400 INVALID REQUEST         – [POST/PUT/PATCH] 请求的数据有误</li>
+<li>404 NOT FOUND               – [*] 资源不存在</li>
+<li>500 INTERNAL SERVER ERROR   – [*] 服务器发生错误</li>
+</ul>
+<h4 id="四、other"><a href="#四、other" class="headerlink" title="四、other"></a>四、other</h4><ol>
+<li>对于4xx的错误情况，需要将错误的信息返回，比如<code>{&quot;error&quot;:&quot;没有权限！&quot;}</code>；</li>
+<li>返回的结果尽量使用<strong>json</strong>格式；</li>
+<li>最好添加身份验证，如<code>OAuth 2.0</code>，或<code>api_key</code>;</li>
+<li>最好做到<strong>Hypermedia</strong>，即在返回结果中提供指向该API的说明文档链接或其他相关API的链接。</li>
+</ol>
 
       
     </div>
@@ -513,7 +544,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://ssdna.github.io/2016/07/14/Build+Hexo+Blog+by+Using+GitHub+Pages/" title="用Hexo在GitHub上搭建博客">http://ssdna.github.io/2016/07/14/Build+Hexo+Blog+by+Using+GitHub+Pages/</a>
+    <a href="http://ssdna.github.io/2017/09/29/A-Note-of-RESTful-API-Design/" title="RESTful API设计总结">http://ssdna.github.io/2017/09/29/A-Note-of-RESTful-API-Design/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -528,9 +559,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/RESTful/" rel="tag"># RESTful</a>
           
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/API/" rel="tag"># API</a>
           
         </div>
       
@@ -543,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/13/Multisites+Setting+in+Apache/" rel="next" title="Apache多站点管理">
-                <i class="fa fa-chevron-left"></i> Apache多站点管理
+              <a href="/2017/09/28/A-Note-of-CORS/" rel="next" title="跨域资源共享技术总结">
+                <i class="fa fa-chevron-left"></i> 跨域资源共享技术总结
               </a>
             
           </div>
@@ -553,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/30/Ajax+in+JQuery+and+Primitive+JavaScript/" rel="prev" title="Ajax用JQuery实现的一种个人常用写法">
-                Ajax用JQuery实现的一种个人常用写法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/26/A-note-of-Server-sent-Events/" rel="prev" title="Server-sent Events学习记录">
+                Server-sent Events学习记录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -707,7 +738,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -718,7 +749,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -729,7 +760,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -813,7 +844,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要安装的软件"><span class="nav-number">1.</span> <span class="nav-text">需要安装的软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git与GitHub相关"><span class="nav-number">2.</span> <span class="nav-text">Git与GitHub相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册并创建GitHub仓库"><span class="nav-number">2.0.1.</span> <span class="nav-text">注册并创建GitHub仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git本地配置"><span class="nav-number">2.0.2.</span> <span class="nav-text">Git本地配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH-key配置"><span class="nav-number">2.0.3.</span> <span class="nav-text">SSH key配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-检查SSH-key的设置"><span class="nav-number">2.0.4.</span> <span class="nav-text">1. 检查SSH key的设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-备份并移除原来的SSH-key"><span class="nav-number">2.0.5.</span> <span class="nav-text">2. 备份并移除原来的SSH key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-生成新的SSH-key"><span class="nav-number">2.0.6.</span> <span class="nav-text">3. 生成新的SSH key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-添加SSH-key到远程GitHub"><span class="nav-number">2.0.7.</span> <span class="nav-text">4. 添加SSH key到远程GitHub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-测试"><span class="nav-number">2.0.8.</span> <span class="nav-text">5. 测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo的安装与使用"><span class="nav-number">3.</span> <span class="nav-text">Hexo的安装与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.0.1.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Hexo"><span class="nav-number">3.0.2.</span> <span class="nav-text">使用Hexo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布博客到GitHub-Repo"><span class="nav-number">4.</span> <span class="nav-text">发布博客到GitHub Repo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地仓库跟GitHub建立联系"><span class="nav-number">4.0.1.</span> <span class="nav-text">本地仓库跟GitHub建立联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布博客"><span class="nav-number">4.0.2.</span> <span class="nav-text">发布博客</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关链接"><span class="nav-number">5.</span> <span class="nav-text">相关链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#RESTful简介"><span class="nav-number">1.</span> <span class="nav-text">RESTful简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RESTful设计举例"><span class="nav-number">2.</span> <span class="nav-text">RESTful设计举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RESTful设计准则"><span class="nav-number">3.</span> <span class="nav-text">RESTful设计准则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、url"><span class="nav-number">3.1.</span> <span class="nav-text">一、url</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、http-method"><span class="nav-number">3.2.</span> <span class="nav-text">二、http method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、http-status-code"><span class="nav-number">3.3.</span> <span class="nav-text">三、http status code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、other"><span class="nav-number">3.4.</span> <span class="nav-text">四、other</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -854,7 +885,7 @@
     
       <span class="post-meta-item-text">网站总字数&#58;</span>
     
-    <span title="网站总字数">3.1k</span>
+    <span title="网站总字数">5.3k</span>
   
 </div>
 
