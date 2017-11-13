@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ssdna.github.io/"/>
-  <updated>2017-10-27T06:44:51.000Z</updated>
+  <updated>2017-11-13T14:35:28.000Z</updated>
   <id>http://ssdna.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端基础知识复习之CSS</title>
+    <link href="http://ssdna.github.io/2017/11/13/Review-of-Front-End-CSS/"/>
+    <id>http://ssdna.github.io/2017/11/13/Review-of-Front-End-CSS/</id>
+    <published>2017-11-13T12:57:38.000Z</published>
+    <updated>2017-11-13T14:35:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="居中问题"><a href="#居中问题" class="headerlink" title="居中问题"></a>居中问题</h2><h3 id="文本居中"><a href="#文本居中" class="headerlink" title="文本居中"></a>文本居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 文字行 水平居中对齐，如p、h1-h6 */</span></div><div class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</div><div class="line"><span class="comment">/* 文字块 水平居中对齐 */</span></div><div class="line"><span class="selector-tag">margin-left</span>: <span class="selector-tag">auto</span>;</div><div class="line"><span class="selector-tag">margin-right</span>: <span class="selector-tag">auto</span>;</div><div class="line"><span class="comment">/* 文字行和列 垂直居中对齐，需要指定高度，如height、line-height或min-height等 */</span></div><div class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>;</div></pre></td></tr></table></figure><h3 id="CSS-level-3-居中"><a href="#CSS-level-3-居中" class="headerlink" title="CSS level 3 居中"></a>CSS level 3 居中</h3><ul><li>水平+垂直居中一体：外层relative，内层absolute+top+transform。</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">10em</span>;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">div</span><span class="selector-class">.container</span> <span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">margin-right</span>: -<span class="number">50%</span>; <span class="comment">/* 注意这里的margin-right! 用来补偿'left:50%'造成的可用元素宽度减少的50%。 详见链接中网页最下方：https://www.w3.org/Style/Examples/007/center.zh_CN.html */</span></div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>水平+垂直居中：flex。</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">10em</span>;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="comment">/* 垂直方向 */</span></div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">    <span class="comment">/* 水平方向 */</span></div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">div</span><span class="selector-class">.container</span> <span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>相关资料：</p><ul><li><a href="https://www.w3.org/Style/Examples/007/center.zh_CN.html" target="_blank" rel="external">https://www.w3.org/Style/Examples/007/center.zh_CN.html</a></li></ul><h2 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h2><ul><li>Flex Container</li></ul><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">display: flex | inline-flex;</div><div class="line">flex-direction: row | row-reverse | column | column-reverse;</div><div class="line">flex-wrap: nowrap | wrap | wrap-reverse;</div><div class="line">flex-flow: &lt;‘flex-direction’&gt; || &lt;‘flex-wrap’&gt;;</div><div class="line">justify-content: flex-start | flex-end | center | space-between | space-around;</div><div class="line">align-items: flex-start | flex-end | center | baseline | stretch;</div><div class="line">align-content: flex-start | flex-end | center | space-between | space-around | stretch;</div></pre></td></tr></table></figure><ul><li>Flex Item</li></ul><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">order</span>: &lt;<span class="selector-tag">integer</span>&gt;;</div><div class="line"><span class="selector-tag">flex-grow</span>: &lt;<span class="selector-tag">number</span>&gt; (<span class="selector-tag">default</span><span class="selector-pseudo">:0)</span>;</div><div class="line"><span class="selector-tag">flex-shrink</span>: &lt;<span class="selector-tag">number</span>&gt; (<span class="selector-tag">default</span><span class="selector-pseudo">:1)</span>;</div><div class="line">flex-basis: &lt;length&gt; | auto (default:auto);</div><div class="line">flex: none | [ &lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ];</div><div class="line">align-self: auto | flex-start | flex-end | center | baseline | stretch;</div></pre></td></tr></table></figure><p>相关资料：</p><ul><li><a href="http://www.w3cplus.com/css3/a-guide-to-flexbox.html" target="_blank" rel="external">http://www.w3cplus.com/css3/a-guide-to-flexbox.html</a></li></ul><h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><h3 id="绝对单位"><a href="#绝对单位" class="headerlink" title="绝对单位"></a>绝对单位</h3><ul><li>屏幕</li></ul><p>单位px，在低分辨率的设备上为1像素，在高分辨率设备上大约为1英尺的1/96。</p><blockquote><p>1in = 96px</p></blockquote><ul><li>打印机<blockquote><p>1in = 2.54cm = 25.4mm = 72pt = 6pc</p></blockquote></li></ul><h3 id="相对单位"><a href="#相对单位" class="headerlink" title="相对单位"></a>相对单位</h3><h4 id="字体相对单位"><a href="#字体相对单位" class="headerlink" title="字体相对单位"></a>字体相对单位</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">em: 该元素计算后的字体大小</div><div class="line">rem: 文件的根元素(html)的字体大小</div><div class="line">ch: 0的字体宽度。</div><div class="line">ex: 小写字母x的字体高度，1ex约为0.5em</div></pre></td></tr></table></figure><h4 id="视口百分比长度"><a href="#视口百分比长度" class="headerlink" title="视口百分比长度"></a>视口百分比长度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vw: 容器块视口1%的宽度</div><div class="line">vh: 容器块视口1%的高度</div><div class="line">vmin: vw和vh中最小的</div><div class="line">vmax: vw和vh中最大的</div></pre></td></tr></table></figure><p>相关资料：</p><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/CSS/length</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;居中问题&quot;&gt;&lt;a href=&quot;#居中问题&quot; class=&quot;headerlink&quot; title=&quot;居中问题&quot;&gt;&lt;/a&gt;居中问题&lt;/h2&gt;&lt;h3 id=&quot;文本居中&quot;&gt;&lt;a href=&quot;#文本居中&quot; class=&quot;headerlink&quot; title=&quot;文本居中&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://ssdna.github.io/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>Server-sent Events学习记录</title>
@@ -34,9 +57,9 @@
       <category term="HTML5" scheme="http://ssdna.github.io/categories/HTML5/"/>
     
     
-      <category term="SSE" scheme="http://ssdna.github.io/tags/SSE/"/>
-    
       <category term="HTTP" scheme="http://ssdna.github.io/tags/HTTP/"/>
+    
+      <category term="SSE" scheme="http://ssdna.github.io/tags/SSE/"/>
     
       <category term="PHP" scheme="http://ssdna.github.io/tags/PHP/"/>
     
@@ -90,9 +113,9 @@
       <category term="HTTP" scheme="http://ssdna.github.io/categories/HTTP/"/>
     
     
-      <category term="HTTP" scheme="http://ssdna.github.io/tags/HTTP/"/>
-    
       <category term="Browser" scheme="http://ssdna.github.io/tags/Browser/"/>
+    
+      <category term="HTTP" scheme="http://ssdna.github.io/tags/HTTP/"/>
     
       <category term="ThinkPHP" scheme="http://ssdna.github.io/tags/ThinkPHP/"/>
     
