@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ssdna.github.io/"/>
-  <updated>2018-04-21T11:56:08.000Z</updated>
+  <updated>2018-05-03T02:31:29.224Z</updated>
   <id>http://ssdna.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>closure</title>
+    <link href="http://ssdna.github.io/2018/05/02/closure/"/>
+    <id>http://ssdna.github.io/2018/05/02/closure/</id>
+    <published>2018-05-02T05:31:13.000Z</published>
+    <updated>2018-05-03T02:31:29.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>widipedia上，对闭包的解释如下：</p><p><code>In programming languages, a closure (also lexical closure or function closure) is a technique for implementing lexically scoped name binding in a language with first-class functions. Operationally, a closure is a record storing a function[a] together with an environment.[1] The environment is a mapping associating each free variable of the function (variables that are used locally, but defined in an enclosing scope) with the value or reference to which the name was bound when the closure was created.[b] A closure—unlike a plain function—allows the function to access those captured variables through the closure&#39;s copies of their values or references, even when the function is invoked outside their scope.</code></p><p>在编程语言中，闭包（也是词法闭包或函数闭包）是一种用一级函数语言实现词汇范围名称绑定的技术。 在操作上，封闭是一个存储功能[a]和环境的记录。[1] 环境是一个映射，它将函数的每个自由变量（在本地使用但在封闭范围中定义的变量）与创建闭包时绑定名称的值或引用相关联。[b]闭包 - 不像 一个简单的函数 - 允许函数通过闭包的值或引用的副本访问那些捕获的变量，即使函数在其作用域之外被调用。</p><ul><li><p><a href="https://en.wikipedia.org/wiki/Closure_(computer_programming" target="_blank" rel="external">Closure wikipedia</a>)</p></li><li><p><a href="http://dmitrysoshnikov.com/ecmascript/chapter-6-closures/" target="_blank" rel="external">ECMA-262-3 in detail. Chapter 6. Closures.</a></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;widipedia上，对闭包的解释如下：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;In programming languages, a closure (also lexical closure or function closure) is a technique for imple
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Web前端涉及到的相关网络协议概述</title>

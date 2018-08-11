@@ -114,13 +114,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="DNA&#39; Blog">
-<meta property="og:url" content="http://ssdna.github.io/categories/HTML5/index.html">
+<meta name="description" content="widipedia上，对闭包的解释如下： In programming languages, a closure (also lexical closure or function closure) is a technique for implementing lexically scoped name binding in a language with first-class functio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="closure">
+<meta property="og:url" content="http://ssdna.github.io/2018/05/02/closure/index.html">
 <meta property="og:site_name" content="DNA&#39; Blog">
+<meta property="og:description" content="widipedia上，对闭包的解释如下： In programming languages, a closure (also lexical closure or function closure) is a technique for implementing lexically scoped name binding in a language with first-class functio">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-03T02:31:29.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DNA&#39; Blog">
+<meta name="twitter:title" content="closure">
+<meta name="twitter:description" content="widipedia上，对闭包的解释如下： In programming languages, a closure (also lexical closure or function closure) is a technique for implementing lexically scoped name binding in a language with first-class functio">
 
 
 
@@ -150,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://ssdna.github.io/categories/HTML5/"/>
+  <link rel="canonical" href="http://ssdna.github.io/2018/05/02/closure/"/>
 
 
 
 
 
-  <title>分类: HTML5 | DNA' Blog</title>
+  <title>closure | DNA' Blog</title>
   
 
 
@@ -175,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -313,55 +317,253 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>HTML5<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ssdna.github.io/2018/05/02/closure/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="DNA">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DNA' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/10/26/A-note-of-Server-sent-Events/" itemprop="url">
-              
-                <span itemprop="name">Server-sent Events学习记录</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">closure</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-26T19:29:20+08:00"
-              content="2017-10-26" >
-          10-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T13:31:13+08:00">
+                2018-05-02
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-03T10:31:29+08:00">
+                2018-05-03
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  302
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>widipedia上，对闭包的解释如下：</p>
+<p><code>In programming languages, a closure (also lexical closure or function closure) is a technique for implementing lexically scoped name binding in a language with first-class functions. Operationally, a closure is a record storing a function[a] together with an environment.[1] The environment is a mapping associating each free variable of the function (variables that are used locally, but defined in an enclosing scope) with the value or reference to which the name was bound when the closure was created.[b] A closure—unlike a plain function—allows the function to access those captured variables through the closure&#39;s copies of their values or references, even when the function is invoked outside their scope.</code></p>
+<p>在编程语言中，闭包（也是词法闭包或函数闭包）是一种用一级函数语言实现词汇范围名称绑定的技术。 在操作上，封闭是一个存储功能[a]和环境的记录。[1] 环境是一个映射，它将函数的每个自由变量（在本地使用但在封闭范围中定义的变量）与创建闭包时绑定名称的值或引用相关联。[b]闭包 - 不像 一个简单的函数 - 允许函数通过闭包的值或引用的副本访问那些捕获的变量，即使函数在其作用域之外被调用。</p>
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Closure_(computer_programming" target="_blank" rel="external">Closure wikipedia</a>)</p>
+</li>
+<li><p><a href="http://dmitrysoshnikov.com/ecmascript/chapter-6-closures/" target="_blank" rel="external">ECMA-262-3 in detail. Chapter 6. Closures.</a></p>
+</li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    DNA
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://ssdna.github.io/2018/05/02/closure/" title="closure">http://ssdna.github.io/2018/05/02/closure/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/21/Front-End-Related-Network-Protocals-Summary/" rel="next" title="Web前端涉及到的相关网络协议概述">
+                <i class="fa fa-chevron-left"></i> Web前端涉及到的相关网络协议概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -369,6 +571,43 @@
 
 
           
+  
+    <div onclick="showGitment()" id="gitment_title" class="gitment_title" style="display:none">显示 Gitment 评论</div>
+    <div id="gitment_container" class="gitment_container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    const myTheme = {
+      render(state, instance) {
+        const container = document.createElement('div');
+        container.lang = "en-US";
+        container.className = 'gitment-container gitment-root-container';
+        container.appendChild(instance.renderHeader(state, instance));
+        container.appendChild(instance.renderEditor(state, instance));
+        container.appendChild(instance.renderComments(state, instance));
+        container.appendChild(instance.renderFooter(state, instance));
+        return container;
+      }
+    }
+    function showGitment() {
+      // $("#gitment_title").attr("style", "display:none");
+      // $("#container").attr("style", "").addClass("gitment_container");
+      var gitment = new Gitment({
+        id: window.location.pathname,
+        theme: myTheme,
+        owner: 'ssDNA',
+        repo: 'ssdna.github.io',
+        oauth: {
+          client_id: 'a09612e9d629685e3295',
+          client_secret: 'c151e37a3b080ecc745be78b78cee987f8c3424f'
+        }
+      });
+      gitment.render('gitment_container');
+    }
+    showGitment();
+    </script>
+  
+
 
         </div>
         
@@ -662,6 +901,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
